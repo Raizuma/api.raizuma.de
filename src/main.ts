@@ -16,6 +16,6 @@ app.get("/", async (req: Request, res: Response): Promise<void> => {
     res.end(JSON.stringify({ message: "Hello World!" }))
 })
 
-app.listen(2999, "0.0.0.0", (): void => {
-    console.log("[server] running on http://0.0.0.0:2999")
+app.listen(3000, "api.raizuma.local", (): void => {
+    console.log("[server] running on http://api.raizuma.local:3000")
 })
