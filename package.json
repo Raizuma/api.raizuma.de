@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "scripts": {
         "start": "tsx -r dotenv/config ./src/main.ts",
-        "dev": "nodemon --watch ./src --ext ts --exec \"clear && tsx -r dotenv/config ./src/main.ts\""
+        "dev": "nodemon --watch ./src --ext ts --exec \"cls && tsx -r dotenv/config ./src/main.ts\""
     },
     "dependencies": {
         "body-parser": "^1.20.2",

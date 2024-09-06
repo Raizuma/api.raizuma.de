@@ -13,7 +13,26 @@ app.get("/", async (req: Request, res: Response): Promise<void> => {
     const cookies: Cookies = new Cookies(req, res)
 
     res.writeHead(200, { "Content-Type": "application/json" })
-    res.end(JSON.stringify({ message: "Hello World!" }))
+    res.end(JSON.stringify({test: "Moew"}))
+})
+
+app.get("/projects/:slug", async (req: Request, res: Response): Promise<void> => {
+    const cookies: Cookies = new Cookies(req, res)
+
+    const slug: string = req.params.slug ?? ""
+    console.log(slug)
+
+    res.writeHead(200, { "Content-Type": "application/json" })
+    res.end(JSON.stringify({     title: "Test",
+        downloadlink: "string",
+        developer: "string",
+        publisher: "string",
+        date: "string",
+        orglanguage: "string",
+        usk: "string",
+        pimage: "https://http.cat/images/200.jpg",
+        description: "string",
+    }))
 })
 
 app.listen(3000, "api.raizuma.local", (): void => {
