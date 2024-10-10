@@ -23,6 +23,7 @@ app.get("/projects/:slug", async (req: Request, res: Response): Promise<void> =>
     console.log(slug)
 
     res.writeHead(200, { "Content-Type": "application/json" })
+    //Return data. Die Daten werden von einer Datenbank kommen. Hier nur Testweise drinnen.
     res.end(JSON.stringify({     title: "Test",
         downloadlink: "string",
         developer: "string",
@@ -32,6 +33,19 @@ app.get("/projects/:slug", async (req: Request, res: Response): Promise<void> =>
         usk: "string",
         pimage: "https://http.cat/images/200.jpg",
         description: "string",
+    }))
+})
+
+
+app.get("/projects", async (req: Request, res: Response): Promise<void> => {
+    const cookies: Cookies = new Cookies(req, res)
+
+    res.writeHead(200, { "Content-Type": "application/json" })
+    //Return data. Mehrere JSON kommen zusammen aus der Datenbank. Hier nur Testweise drinnen.
+    res.end(JSON.stringify({     title: "Test",
+        path: "string",
+        imgalt: "string",
+        imsrc: "string",
     }))
 })
 
